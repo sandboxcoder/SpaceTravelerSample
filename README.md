@@ -13,3 +13,7 @@ cd build
 cmake -G "Visual Studio 17 2022" ..
 
 ```
+
+## Implementation notes
+
+Modules are defined within .ixx files as required by Visual Studio (otherwise Intellisense will not work). Also, we set the CMAKE_CXX_SCAN_FOR_MODULES flag.
