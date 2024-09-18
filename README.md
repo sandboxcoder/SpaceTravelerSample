@@ -1,7 +1,7 @@
 # Space Traveler
 
-Sample project that utilizes C++ 20 modules with CMake for Visual Studio.  
-Currently, this project is simply creating a Galaxy of planets.
+Sample project (C++ 23) that utilizes C++ 20 modules with CMake for Visual Studio.  
+Currently, this project is simply creating a Galaxy of planets (in code).
 
 ## Building this Project
 In order to build you will need to download CMake (at least 3.29.3) to build the solution.  
