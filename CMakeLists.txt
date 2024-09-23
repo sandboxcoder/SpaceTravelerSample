@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.29.3)
 project ("SpaceTraveler")
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Should enable intellisense in Visual Studio
