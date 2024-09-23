@@ -1,5 +1,7 @@
 module;
 #include <iostream>
+#include <string>
+#include <string_view>
 #include <vector>
 #include <memory>
 #include <queue>
@@ -48,8 +50,9 @@ struct ComparePlanetsRadius {
 
 export class Galaxy {
 public:
-  Galaxy(int queueSize)
+  Galaxy(int queueSize, std::string name)
     : _size(queueSize)
+    , _name(name)
   {
   }
 
@@ -80,8 +83,14 @@ public:
     return d;
   }
 
+  bool containsSubstring(std::string substring)
+  {
+    return _name.contains(substring);
+  }
+
 private:
   std::vector<std::shared_ptr<Planet>> _planets;
   std::priority_queue<std::shared_ptr<Planet>, std::vector<std::shared_ptr<Planet>>, ComparePlanetsRadius> _pq;
   int _size;
+  std::string _name;
 };
