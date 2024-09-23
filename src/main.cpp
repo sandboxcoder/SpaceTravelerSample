@@ -11,5 +11,6 @@ int main()
   galaxy.addPlanet(std::make_shared<Planet>(9.0f, 0.8f, true));
   galaxy.addPlanet(std::make_shared<Planet>(3.0f, 0.8f, true));
   galaxy.printKthLargestPlanets();
+  std::cout << "Range:" << galaxy.getRange() << std::endl;
   return 0;
 }

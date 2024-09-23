@@ -74,6 +74,12 @@ public:
     }
   }
 
+  size_t getRange()
+  {
+    size_t d = std::ranges::distance(_planets.begin(), _planets.end());
+    return d;
+  }
+
 private:
   std::vector<std::shared_ptr<Planet>> _planets;
   std::priority_queue<std::shared_ptr<Planet>, std::vector<std::shared_ptr<Planet>>, ComparePlanetsRadius> _pq;
