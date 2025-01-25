@@ -1,0 +1,42 @@
+module;
+#include <iostream>
+#include <string>
+#include <string_view>
+#include <vector>
+#include <memory>
+#include <queue>
+export module universe:Planet;
+
+export class IPlanet
+{
+public:
+  virtual float getGravity() const = 0;
+  virtual bool hasAtmosphere() const = 0;
+  virtual float getRadius() const = 0;
+};
+
+export class Planet : public IPlanet
+{
+public:
+  Planet(float radius, float gravity, bool hasAtmosphere)
+    : _radius(radius)
+    , _gravity(gravity)
+    , _hasAtmosphere(hasAtmosphere)
+  {
+
+  }
+
+  virtual float getGravity() const override
+  {
+    return _gravity;
+  }
+  virtual bool hasAtmosphere() const override { return _hasAtmosphere; }
+  virtual float getRadius() const override {
+    return _radius;
+  }
+
+private:
+  float _radius;
+  bool _hasAtmosphere;
+  float _gravity;
+};

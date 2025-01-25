@@ -7,6 +7,7 @@ target_sources(universe
     FILE_SET cxx_universe_modules TYPE CXX_MODULES 
     FILES
       universe.ixx
+      Planet.ixx
 )
 
 
