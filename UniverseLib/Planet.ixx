@@ -1,11 +1,10 @@
-module;
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <vector>
-#include <memory>
-#include <queue>
 export module universe:Planet;
+import <iostream>;
+import <string>;
+import <string_view>;
+import <vector>;
+import <memory>;
+import <queue>;
 
 export class IPlanet
 {
