@@ -1,5 +1,7 @@
 export module universe:Planet;
 
+import <cassert>;
+
 export class IPlanet
 {
 public:
@@ -16,7 +18,7 @@ public:
     , _gravity(gravity)
     , _hasAtmosphere(hasAtmosphere)
   {
-
+    assert(radius > 0.0f);
   }
 
   virtual float getGravity() const override
