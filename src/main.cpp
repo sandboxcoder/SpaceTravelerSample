@@ -1,7 +1,5 @@
 import universe;
 
-#include <iostream>
-
 int main()
 {
   Galaxy galaxy(3, "Milky Way");

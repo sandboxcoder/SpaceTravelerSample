@@ -1,10 +1,5 @@
 export module universe;
-import <iostream>;
-import <string>;
-import <string_view>;
-import <vector>;
-import <memory>;
-import <queue>;
+import std;
 
 import :Planet;
 
