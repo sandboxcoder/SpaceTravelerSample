@@ -1,10 +1,4 @@
 export module universe:Planet;
-import <iostream>;
-import <string>;
-import <string_view>;
-import <vector>;
-import <memory>;
-import <queue>;
 
 export class IPlanet
 {
