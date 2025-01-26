@@ -6,7 +6,7 @@ Currently, this project is simply creating a Galaxy of planets (in code).
 ## Building this Project
 In order to build you will need to download CMake (at least 3.29.3) to build the solution.  
 
-Below is the following command I used to generate the solution on Windows (note for Linux/Unix, use "Unix Makefiles"):
+Below is the following command I used to generate the solution for Visual Studio (note for Linux/Unix, use "Unix Makefiles"):
 
 ```
 mkdir build
