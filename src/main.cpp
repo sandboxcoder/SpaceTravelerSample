@@ -8,7 +8,10 @@ int main()
   galaxy.addPlanet(std::make_shared<Planet>(2.0f, 1.8f, true));
   galaxy.addPlanet(std::make_shared<Planet>(9.0f, 0.8f, true));
   galaxy.addPlanet(std::make_shared<Planet>(3.0f, 0.8f, true));
+  galaxy.addPlanet(std::make_shared<Planet>(1.0f, 0.8f, true));
+
   galaxy.printKthLargestPlanets();
+
   std::cout << "Range:" << galaxy.getRange() << std::endl;
   std::cout << "Galaxy name contains " << galaxy.containsSubstring("Milk") << std::endl;
 
