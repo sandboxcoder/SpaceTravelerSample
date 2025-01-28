@@ -1,5 +1,6 @@
 export module universe:Planet;
 
+import std;
 import <cassert>;
 
 export class IPlanet
@@ -19,6 +20,7 @@ public:
     , _hasAtmosphere(hasAtmosphere)
   {
     assert(radius > 0.0f);
+    _radius = std::max(_radius, 0.01f); // We do not allow zero or negative radius
   }
 
   virtual float getGravity() const override
