@@ -14,6 +14,7 @@ cd build
 cmake -G "Visual Studio 17 2022" ..
 
 ```
+You will find the solution for visual studio inside the build folder.
 
 ## Implementation notes
 
