@@ -4,7 +4,7 @@ import std;
 import :Planet;
 
 struct ComparePlanetsRadius {
-  bool operator()(const std::shared_ptr<Planet>& l, const std::shared_ptr<Planet>& r) {
+  bool operator()(const std::shared_ptr<IPlanet>& l, const std::shared_ptr<IPlanet>& r) {
     return l->getRadius() > r->getRadius();
   }
 };
@@ -17,7 +17,7 @@ public:
   {
   }
 
-  void addPlanet(std::shared_ptr<Planet> planet)
+  void addPlanet(std::shared_ptr<IPlanet> planet)
   {
     _planets.push_back(planet);
     _pq.push(planet);
@@ -50,8 +50,8 @@ public:
   }
 
 private:
-  std::vector<std::shared_ptr<Planet>> _planets;
-  std::priority_queue<std::shared_ptr<Planet>, std::vector<std::shared_ptr<Planet>>, ComparePlanetsRadius> _pq;
+  std::vector<std::shared_ptr<IPlanet>> _planets;
+  std::priority_queue<std::shared_ptr<IPlanet>, std::vector<std::shared_ptr<IPlanet>>, ComparePlanetsRadius> _pq;
   int _size;
   std::string _name;
 };

@@ -3,12 +3,12 @@ import universe;
 int main()
 {
   Galaxy galaxy(3, "Milky Way");
-  galaxy.addPlanet(std::make_shared<Planet>(5.0f, 9.8f, true));
-  galaxy.addPlanet(std::make_shared<Planet>(7.0f, 2.8f, true));
-  galaxy.addPlanet(std::make_shared<Planet>(2.0f, 1.8f, true));
-  galaxy.addPlanet(std::make_shared<Planet>(9.0f, 0.8f, true));
-  galaxy.addPlanet(std::make_shared<Planet>(3.0f, 0.8f, true));
-  galaxy.addPlanet(std::make_shared<Planet>(1.0f, 0.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(5.0f, 9.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(7.0f, 2.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(2.0f, 1.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(9.0f, 0.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(3.0f, 0.8f, true));
+  galaxy.addPlanet(PlanetGenerator::createPlanet(1.0f, 0.8f, true));
 
   galaxy.printKthLargestPlanets();
 

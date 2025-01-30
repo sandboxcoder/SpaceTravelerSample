@@ -11,7 +11,7 @@ public:
   virtual float getRadius() const = 0;
 };
 
-export class Planet : public IPlanet
+class Planet : public IPlanet
 {
 public:
   Planet(float radius, float gravity, bool hasAtmosphere)
@@ -36,4 +36,13 @@ private:
   float _radius;
   bool _hasAtmosphere;
   float _gravity;
+};
+
+export class PlanetGenerator
+{
+public:
+  static std::shared_ptr<IPlanet> createPlanet(float radius, float gravity, bool hasAtmosphere)
+  {
+    return std::make_shared<Planet>(radius, gravity, hasAtmosphere);
+  }
 };
