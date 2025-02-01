@@ -46,7 +46,7 @@ public:
 
   bool containsSubstring(std::string substring)
   {
-    return _name.contains(substring);
+    return _name.contains(substring); // Added C++ 23
   }
 
 private:
