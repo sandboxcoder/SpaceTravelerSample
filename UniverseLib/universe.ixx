@@ -40,8 +40,7 @@ public:
 
   size_t getRange()
   {
-    size_t d = std::ranges::distance(_planets.begin(), _planets.end());
-    return d;
+    return std::ranges::distance(_planets.begin(), _planets.end());
   }
 
   bool containsSubstring(std::string substring)
