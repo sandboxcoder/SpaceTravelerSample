@@ -1,7 +1,6 @@
 export module universe:Planet;
 
 import std;
-import <cassert>;
 
 export class IPlanet
 {
@@ -19,8 +18,7 @@ public:
     , _gravity(gravity)
     , _hasAtmosphere(hasAtmosphere)
   {
-    assert(radius > 0.0f);
-    _radius = std::max(_radius, 0.01f); // We do not allow zero or negative radius
+    _radius = std::max(_radius, 0.0f); // We do not allow zero or negative radius
   }
 
   virtual float getGravity() const override
@@ -41,6 +39,13 @@ private:
 export class PlanetGenerator
 {
 public:
+  /// <summary>
+  /// Returns a concrete IPlanet implementation.
+  /// </summary>
+  /// <param name="radius">Should not be less than 0.</param>
+  /// <param name="gravity"></param>
+  /// <param name="hasAtmosphere"></param>
+  /// <returns></returns>
   static std::shared_ptr<IPlanet> createPlanet(float radius, float gravity, bool hasAtmosphere)
   {
     return std::make_shared<Planet>(radius, gravity, hasAtmosphere);
