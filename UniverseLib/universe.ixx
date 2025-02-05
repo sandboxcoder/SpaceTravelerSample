@@ -9,7 +9,7 @@ struct ComparePlanetsRadius {
   }
 };
 
-// C++ 20 method to declare the compartor
+// Returns true if the leftmost planet has the greatest radius
 auto comparePlanets = [](const std::shared_ptr<IPlanet>& l, const std::shared_ptr<IPlanet>& r) {
   return l->getRadius() > r->getRadius();
   };
