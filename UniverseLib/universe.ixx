@@ -9,48 +9,50 @@ struct ComparePlanetsRadius {
   }
 };
 
+// C++ 20 method to declare the compartor
+auto comparePlanets = [](const std::shared_ptr<IPlanet>& l, const std::shared_ptr<IPlanet>& r) {
+  return l->getRadius() > r->getRadius();
+  };
+
 export class Galaxy {
 public:
-  Galaxy(int queueSize, std::string name)
-    : _size(queueSize)
-    , _name(name)
+  Galaxy(std::string name)
+    : _name(name)
   {
   }
 
   void addPlanet(std::shared_ptr<IPlanet> planet)
   {
-    _planets.push_back(planet);
-    _pq.push(planet);
-    if (_pq.size() > _size)
-    {
-      _pq.pop();
-    }
+    _planetSet.insert(planet);
   }
 
   /// <summary>
-  /// Destructive operation that will clear the internal queue.
+  /// Prints all planets to console.
   /// </summary>
-  void printKthLargestPlanets()
+  void print()
   {
-    while(!_pq.empty()) {
-      std::cout << _pq.top()->getRadius() << std::endl;
-      _pq.pop();
+    for (auto &planet : _planetSet)
+    {
+      std::cout << planet->getRadius() << std::endl;
     }
   }
 
   size_t getRange()
   {
-    return std::ranges::distance(_planets.begin(), _planets.end());
+    return std::ranges::distance(_planetSet.begin(), _planetSet.end());
   }
 
+  /// <summary>
+  /// Asks this galaxy does its' name contains the substring.
+  /// </summary>
+  /// <param name="substring"></param>
+  /// <returns></returns>
   bool containsSubstring(std::string substring)
   {
     return _name.contains(substring); // Added C++ 23
   }
 
 private:
-  std::vector<std::shared_ptr<IPlanet>> _planets;
-  std::priority_queue<std::shared_ptr<IPlanet>, std::vector<std::shared_ptr<IPlanet>>, ComparePlanetsRadius> _pq;
-  int _size;
   std::string _name;
+  std::set<std::shared_ptr<IPlanet>, decltype(comparePlanets)> _planetSet; // C++ 20 approach see: https://stackoverflow.com/questions/2620862/using-custom-stdset-comparator
 };
