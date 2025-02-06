@@ -31,9 +31,24 @@ public:
     }
   }
 
+  /// <summary>
+  /// Returns the range from the beginning of the set to the end.
+  /// This function isn't built to be "practical". Added to demonstrate
+  /// std::ranges::distance.
+  /// </summary>
+  /// <returns></returns>
   size_t getRange()
   {
     return std::ranges::distance(_planetSet.begin(), _planetSet.end());
+  }
+
+  /// <summary>
+  /// Returns the size of this galaxy
+  /// </summary>
+  /// <returns></returns>
+  size_t getSize()
+  {
+    return _planetSet.size();
   }
 
   /// <summary>

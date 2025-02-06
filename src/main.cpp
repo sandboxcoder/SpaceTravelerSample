@@ -12,7 +12,7 @@ int main()
 
   galaxy.print();
 
-  std::cout << "Range:" << galaxy.getRange() << std::endl;
+  std::cout << "Range:" << galaxy.getRange() << " size: " << galaxy.getSize() << std::endl;
   std::cout << "Galaxy name contains " << galaxy.containsSubstring("Milk") << std::endl;
 
 
