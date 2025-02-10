@@ -18,6 +18,10 @@ public:
   void addPlanet(std::shared_ptr<IPlanet> planet)
   {
     _planetSet.insert(planet);
+    if (!planet->hasAtmosphere())
+    {
+      _moons.push_back(planet);
+    }
   }
 
   /// <summary>
@@ -29,6 +33,14 @@ public:
     {
       std::cout << planet->getRadius() << std::endl;
     }
+  }
+
+  /// <summary>
+  /// Returns the list of planets that doesnt have an atmosphere.
+  /// </summary>
+  const std::vector<std::shared_ptr<IPlanet>>& getMoons() const
+  {
+    return _moons;
   }
 
   /// <summary>
@@ -64,4 +76,5 @@ public:
 private:
   std::string _name;
   std::set<std::shared_ptr<IPlanet>, decltype(comparePlanets)> _planetSet; // C++ 20 approach see: https://stackoverflow.com/questions/2620862/using-custom-stdset-comparator
+  std::vector<std::shared_ptr<IPlanet>> _moons;
 };
