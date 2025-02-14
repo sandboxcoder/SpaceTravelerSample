@@ -49,7 +49,7 @@ public:
   /// std::ranges::distance.
   /// </summary>
   /// <returns></returns>
-  size_t getRange()
+  size_t getRange() const
   {
     return std::ranges::distance(_planetSet.begin(), _planetSet.end());
   }
@@ -58,7 +58,7 @@ public:
   /// Returns the size of this galaxy
   /// </summary>
   /// <returns></returns>
-  size_t getSize()
+  size_t getSize() const
   {
     return _planetSet.size();
   }
