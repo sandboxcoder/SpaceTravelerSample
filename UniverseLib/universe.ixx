@@ -27,7 +27,7 @@ public:
   /// <summary>
   /// Prints all planets to console.
   /// </summary>
-  void print()
+  void print() const
   {
     for (auto &planet : _planetSet)
     {
@@ -68,7 +68,7 @@ public:
   /// </summary>
   /// <param name="substring"></param>
   /// <returns></returns>
-  bool containsSubstring(std::string substring)
+  bool containsSubstring(std::string substring) const
   {
     return _name.contains(substring); // Added C++ 23
   }
