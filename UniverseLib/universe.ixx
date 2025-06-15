@@ -31,7 +31,7 @@ public:
   {
     for (auto &planet : _planetSet)
     {
-      std::cout << planet->getRadius() << std::endl;
+      std::cout << "radius:" << planet->getRadius() << std::endl;
     }
   }
 
